@@ -91,7 +91,7 @@ spd_sum
 hist(spd_sum$spd_sum, main = "Frequency of steps per day", xlab = "total number of steps taken per day")
 ```
 
-![](figure-html/unnamed-chunk-2-1.png)<!-- -->
+![](figure/unnamed-chunk-2-1.png)<!-- -->
 
 ```r
 spd_mean <- tapply(activity$steps, activity$date, mean, na.rm = T)
@@ -247,7 +247,7 @@ colnames(sad_mean)[1] <- "average_steps_alldays"
 plot(sad_mean$interval, sad_mean$average_steps_alldays, type = "l", main = "Time series of average steps", xlab = "Time intervsal (5 min)", ylab = "Average number of steps")
 ```
 
-![](figure-html/unnamed-chunk-3-1.png)<!-- -->
+![](figure/unnamed-chunk-3-1.png)<!-- -->
 
 ```r
 sad_mean_new <- sad_mean[order(sad_mean$average_steps_alldays, decreasing = T),]
@@ -300,7 +300,7 @@ spd_sum_new <- data.frame(spd_sum_new)
 hist(spd_sum_new$spd_sum_new, main = "New frequency of steps per day", xlab = "total number of steps taken per day")
 ```
 
-![](figure-html/unnamed-chunk-4-1.png)<!-- -->
+![](figure/unnamed-chunk-4-1.png)<!-- -->
 
 ```r
 spd_mean_new <- tapply(activity$newsteps, activity$date, mean, na.rm = T)
@@ -456,4 +456,4 @@ library(lattice)
 xyplot(activity$newsteps~activity$interval|activity$weekday, type = "l", layout = c(1,2), ylab = "Number of steps", xlab = "Interval")
 ```
 
-![](figure-html/unnamed-chunk-5-1.png)<!-- -->
+![](figure/unnamed-chunk-5-1.png)<!-- -->
